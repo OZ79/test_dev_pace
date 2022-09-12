@@ -46,11 +46,11 @@ class Page extends HookWidget {
   Widget build(BuildContext context) {
     //const itemCount = 13;
     final itemCount = useState(0);
+    final controller = useScrollController();
     final rows = itemCount.value ~/ 2 + itemCount.value % 2;
     final screenWidth = MediaQuery.of(context).size.width;
     final boxHeight =
         (((screenWidth - 10) * 0.5) * 0.5) * rows + 10 * (rows - 1);
-    final controller = useScrollController();
 
     return Stack(
       children: [
